@@ -1,0 +1,26 @@
+%YAML 1.1
+---
+version: '3.7'
+services:
+  foobar:
+    build:
+      cache_from:
+      - hansbogert/foobar:latest
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - BUILDKIT_INLINE_CACHE=1
+    image: hansbogert/foobar:latest
+
+
+  foobarx:
+    build:
+      cache_from:
+      - hansbogert/foobar:latest
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - BUILDKIT_INLINE_CACHE=1
+      target: x
+    image: hansbogert/foobar:latest
+
